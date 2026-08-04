@@ -27,7 +27,16 @@ function App() {
       <header>
         <h1>Pokédex</h1>
         <p>by "Roach Killjoy"</p>
-        <p>{pokemons.length} pokémons chargés</p>
+        <div className="grid">
+          {pokemons.map((pokemon) => (
+            <PokemonCard
+              key={pokemon.id}
+              id={pokemon.id}
+              name={pokemon.name}
+              image={pokemon.image}
+            />
+          ))}
+      </div>
       </header>
     </div>
   )
